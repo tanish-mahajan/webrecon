@@ -62,5 +62,5 @@ try:
     checkurl = requests.get("http://www." + url)
     start()
 except requests.exceptions.ConnectionError:
-    print("Incorrect Domain name\nFor example: google.com, yahoo.com")
+    print("Incorrect Domain name")
 
