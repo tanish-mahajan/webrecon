@@ -57,9 +57,10 @@ def start():
 print(pyfiglet.figlet_format("Webrecon"))
 print("By: Tanish Mahajan")
 
-url = input("\nEnter the Domain Name: ")
+url = input("\nEnter the Domain Name (For example: google.com, yahoo.com): ")
 try:
     checkurl = requests.get("http://www." + url)
     start()
 except requests.exceptions.ConnectionError:
-    print("Incorrest url")
+    print("Incorrect Domain name\nFor example: google.com, yahoo.com")
+
