@@ -1,7 +1,8 @@
+from time import sleep
+
 import requests
 import sys
-
-url = input("Enter the Domain Name: ")
+import pyfiglet
 
 
 def subdomains():
@@ -47,6 +48,8 @@ def start():
     else:
         print("Choose Correct Option")
         start()
+print(pyfiglet.figlet_format("Webrecon"))
+print("By: Tanish Mahajan")
 
-
+url = input("\nEnter the Domain Name: ")
 start()
