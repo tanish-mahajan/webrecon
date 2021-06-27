@@ -38,18 +38,30 @@ def directories():
 
 def start():
     print("1. Subdomains\n2. Directories")
-    option = int(input("Choose 1 or 2: "))
-    if option == 1:
-        print("<----------------Checking for Subdomains---------------->")
-        subdomains()
-    elif option == 2:
-        print("<----------------Checking for Directories---------------->")
-        directories()
-    else:
-        print("Choose Correct Option")
+    try:
+        option = int(input("\nChoose 1 or 2: "))
+        if option == 1:
+            print("<----------------Checking for Subdomains---------------->")
+            subdomains()
+        elif option == 2:
+            print("<----------------Checking for Directories---------------->")
+            directories()
+        else:
+            print("\n<----------Choose Correct Option---------->\n")
+            start()
+    except KeyboardInterrupt:
+        sys.exit()
+    except:
+        print("\n<----------Choose Correct Option---------->\n")
         start()
+
+
 print(pyfiglet.figlet_format("Webrecon"))
 print("By: Tanish Mahajan")
 
 url = input("\nEnter the Domain Name: ")
-start()
+try:
+    checkurl = requests.get("http://www." + url)
+    start()
+except requests.exceptions.ConnectionError:
+    print("Incorrest url")
