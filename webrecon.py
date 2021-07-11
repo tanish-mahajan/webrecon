@@ -4,7 +4,7 @@ import pyfiglet
 
 
 def subdomains():
-    with open("subdmainwordlist.txt", "r") as subd:
+    with open("files/subdmainwordlist.txt", "r") as subd:
         for line in subd:
             word = line.strip()
             testurl = word + "." + url
@@ -19,7 +19,7 @@ def subdomains():
 
 
 def directories():
-    with open("directory.txt", "r") as dirlist:
+    with open("files/directory.txt", "r") as dirlist:
         for dir in dirlist:
             # print(dir)
             word = dir.strip()
